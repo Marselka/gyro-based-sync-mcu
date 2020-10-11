@@ -1,0 +1,10 @@
+12:04:23 **** Incremental Build of configuration Debug for project gyro_based_sync ****
+make -j12 all 
+arm-none-eabi-size   gyro_based_sync.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29852	    120	   2504	  32476	   7edc	gyro_based_sync.elf
+Finished building: default.size.stdout
+ 
+
+12:04:23 Build Finished. 0 errors, 0 warnings. (took 527ms)
+
