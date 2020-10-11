@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define N_CHARS 91
+#define N_CHARS 95
 #define N_CHARS2 39
 #define N_BYTES 16
 #define DATASET_LENGTH 10
@@ -194,9 +194,9 @@ void make_string(void) {
 				"%04x "																			//5
 				"%04x %04x %04x %04x %04x %04x %04x " 			//35
 				"%04x %04x %04x %04x %04x %04x %04x "			 	//35
-				"%04x"                                      //4
+				"%08x"                                      //4
 				"\n", 																			//1
-																										//=91
+																										//=91+4
 				(uint8_t)(sTime1.Minutes),
 				(uint8_t)(sTime1.Seconds),
 				(uint16_t)(sTime1.SubSeconds),
@@ -518,7 +518,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 3 - 1;
+  htim2.Init.Prescaler = 4 - 1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 4294967296 - 1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

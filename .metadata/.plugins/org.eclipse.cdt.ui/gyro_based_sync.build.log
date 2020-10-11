@@ -1,10 +1,150 @@
-12:04:23 **** Incremental Build of configuration Debug for project gyro_based_sync ****
+12:41:07 **** Incremental Build of configuration Debug for project gyro_based_sync ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'make_string':
+../Core/Src/main.c:192:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  sprintf(str,
+  ^~~~~~~
+../Core/Src/main.c:192:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:192:2: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:192:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  sprintf(str,
+          ^~~
+../Core/Src/main.c:192:10: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+../Core/Src/main.c: In function 'make_string2':
+../Core/Src/main.c:227:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+  sprintf(str2,
+  ^~~~~~~
+../Core/Src/main.c:227:2: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:227:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  sprintf(str2,
+          ^~~~
+../Core/Src/main.c:227:10: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+../Core/Src/main.c:228:8: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   "%012d %012d %012d" //38
+    ~~~~^
+    %012ld
+../Core/Src/main.c:231:3:
+   t2-t1,
+   ~~~~~ 
+../Core/Src/main.c:228:14: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   "%012d %012d %012d" //38
+          ~~~~^
+          %012ld
+../Core/Src/main.c:228:20: warning: format '%d' expects argument of type 'int', but argument 5 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   "%012d %012d %012d" //38
+                ~~~~^
+                %012ld
+../Core/Src/main.c: In function 'make_string':
+../Core/Src/main.c:193:5: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+     "%02x %02x %04x "              //11
+     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:198:8: note: format string is defined here
+     "\n",                    //1
+        ^
+../Core/Src/main.c:192:2: note: 'sprintf' output 92 bytes into a destination of size 91
+  sprintf(str,
+  ^~~~~~~~~~~~~
+     "%02x %02x %04x "              //11
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "%04x "                   //5
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "%04x %04x %04x %04x %04x %04x %04x "    //35
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "%04x %04x %04x %04x %04x %04x %04x "     //35
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "%04x"                                      //4
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "\n",                    //1
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                           //=91
+                           ~~~~~~
+     (uint8_t)(sTime1.Minutes),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint8_t)(sTime1.Seconds),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(sTime1.SubSeconds),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ ~ 
+     count,
+     ~~~~~~~
+ 
+ ~ 
+     (uint16_t)(dat1_buf[0]<<8 | dat1_buf[1]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[2]<<8 | dat1_buf[3]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[4]<<8 | dat1_buf[5]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[6]<<8 | dat1_buf[7]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[8]<<8 | dat1_buf[9]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[10]<<8 | dat1_buf[11]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat1_buf[12]<<8 | dat1_buf[13]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ ~ 
+     (uint16_t)(dat2_buf[0]<<8 | dat2_buf[1]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[2]<<8 | dat2_buf[3]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[4]<<8 | dat2_buf[5]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[6]<<8 | dat2_buf[7]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[8]<<8 | dat2_buf[9]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[10]<<8 | dat2_buf[11]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     (uint16_t)(dat2_buf[12]<<8 | dat2_buf[13]),
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ ~ 
+     delta_t
+     ~~~~~~~~
+  );
+  ~
+../Core/Src/main.c: In function 'make_string2':
+../Core/Src/main.c:228:3: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+   "%012d %012d %012d" //38
+   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:229:7: note: format string is defined here
+    "\n",    //1
+       ^
+../Core/Src/main.c:227:2: note: 'sprintf' output 40 bytes into a destination of size 39
+  sprintf(str2,
+  ^~~~~~~~~~~~~~
+   "%012d %012d %012d" //38
+   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    "\n",    //1
+    ~~~~~~~~~~~~~
+         //=39
+         ~~~~~~
+   t2-t1,
+   ~~~~~~~
+   t1,
+   ~~~~
+   t2
+   ~~~
+  );
+  ~
+arm-none-eabi-gcc -o "gyro_based_sync.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ma/STM32CubeIDE/gyro_based_sync/gyro_based_sync/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gyro_based_sync.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gyro_based_sync.elf
+ 
+arm-none-eabi-objdump -h -S  gyro_based_sync.elf  > "gyro_based_sync.list"
+arm-none-eabi-objcopy  -O binary  gyro_based_sync.elf  "gyro_based_sync.bin"
 arm-none-eabi-size   gyro_based_sync.elf 
    text	   data	    bss	    dec	    hex	filename
   29852	    120	   2504	  32476	   7edc	gyro_based_sync.elf
 Finished building: default.size.stdout
  
+Finished building: gyro_based_sync.bin
+ 
+Finished building: gyro_based_sync.list
+ 
 
-12:04:23 Build Finished. 0 errors, 0 warnings. (took 527ms)
+12:41:08 Build Finished. 0 errors, 10 warnings. (took 823ms)
 
